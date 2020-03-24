@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbrsize_base.c                                  :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/04 16:21:14 by julnolle          #+#    #+#             */
-/*   Updated: 2020/01/06 17:51:03 by julnolle         ###   ########.fr       */
+/*   Created: 2020/02/06 14:22:54 by julnolle          #+#    #+#             */
+/*   Updated: 2020/02/06 14:23:01 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Returns the len of a nbr converted into base
-*/
-
-size_t	ft_nbrsize_base(long n, size_t base_len)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	size_t len;
+	size_t i;
 
-	if (n == 0)
-		len = 1;
-	else
-	{
-		len = (n < 0) ? 1 : 0;
-		n = (n < 0) ? -n : n;
-		while (n > 0)
-		{
-			n = n / base_len;
-			len++;
-		}
-	}
-	return (len);
+	i = 0;
+	while (s1[i] != 0 && s2[i] != 0 && s1[i] == s2[i])
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
