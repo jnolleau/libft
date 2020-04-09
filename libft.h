@@ -6,7 +6,7 @@
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 10:02:42 by julnolle          #+#    #+#             */
-/*   Updated: 2020/01/06 16:49:50 by julnolle         ###   ########.fr       */
+/*   Updated: 2020/04/09 20:38:13 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 # include <stddef.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <math.h>
+
+# define SUCCESS	0
+# define FAILURE	-1
+# define TRUE		1
+# define FALSE		0
 
 typedef	struct	s_list
 {
@@ -40,9 +46,12 @@ void			*ft_memcpy(void *dst, const void *src, size_t n);
 void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_putchar(char c);
+void			ft_putchar_fd(char c, int fd);
 void			ft_putendl(char *s);
 void			ft_putnbr(int n);
+void			ft_putnbr_fd(int n, int fd);
 void			ft_putstr(char *s);
+void			ft_putstr_fd(char *s, int fd);
 char			**ft_split(char const *s, char c);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strdup(const char *src);
@@ -60,6 +69,9 @@ char			*ft_substr(char const *s, unsigned int start, size_t len);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
 
+/*
+** my functions
+*/
 void			ft_lstdelone(t_list *lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 void			ft_lstadd_back(t_list **alst, t_list *new);
@@ -81,5 +93,9 @@ size_t			ft_nbrsize_base(long n, size_t base_len);
 void			ft_strjoin_back(char *back, char **src);
 void			ft_strjoin_front(char *front, char **src);
 char			*ft_itoa_base(long nb, char *base);
+int				ft_strcmp(const char *s1, const char *s2);
+double			ft_atof(const char *str);
+char			**ft_split_charset(char const *str, char *charset);
+char			**ft_split_whitespaces(char const *str);
 
 #endif

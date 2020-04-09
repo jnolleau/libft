@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: julien <julien@student.42.fr>              +#+  +:+       +#+         #
+#    By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/10 13:56:26 by julnolle          #+#    #+#              #
-#    Updated: 2020/03/24 19:12:52 by julien           ###   ########.fr        #
+#    Updated: 2020/04/09 20:15:54 by julnolle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,7 @@ HEAD = $(INCLUDES)libft.h
 
 DIR_OBJS	= ./objs/
 OBJS		= $(patsubst %.c, $(DIR_OBJS)%.o, $(SRCS))
-# OBJS_BONUS	= $(patsubst %.c, $(DIR_OBJS)%.o, $(SRCS))
+OBJS_BONUS	= $(patsubst %.c, $(DIR_OBJS)%.o, $(BONUS))
 
 
 # --------- Compilation Rules -------- #
@@ -79,16 +79,16 @@ $(NAME):	$(OBJS)
 $(OBJS): 	$(DIR_OBJS)%.o: %.c $(HEAD) Makefile | $(DIR_OBJS)
 			$(CC) $(CFLAGS) -c $< -o $@ -I$(INCLUDES)
 
-$(DIR_OBJS):
-	mkdir -p $@
-
-bonus : 	$(OBJS_BONUS) $(OBJ)
+bonus : 	$(OBJS) $(OBJS_BONUS)
 			ar rcs $(NAME) $^
 			ranlib $(NAME)
 			echo "$(red)--> Creating $@...$(no_color)"
 
 $(OBJS_BONUS):	$(DIR_OBJS)%.o: %.c $(HEAD)
 				$(CC) $(CFLAGS) -c $< -o $@ -I$(INCLUDES)
+
+$(DIR_OBJS):
+	mkdir -p $@
 
 clean:
 			$(RM) -R $(DIR_OBJS)
