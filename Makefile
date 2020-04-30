@@ -6,7 +6,7 @@
 #    By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/10 13:56:26 by julnolle          #+#    #+#              #
-#    Updated: 2020/04/09 20:15:54 by julnolle         ###   ########.fr        #
+#    Updated: 2020/04/30 20:28:29 by julnolle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,7 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 			ar rcs $@ $^
 			ranlib $(NAME)
-			echo "$(red)--> Creating $@...$(no_color)"
+			echo "$(yellow)--> Creating $@...$(no_color)"
 
 $(OBJS): 	$(DIR_OBJS)%.o: %.c $(HEAD) Makefile | $(DIR_OBJS)
 			$(CC) $(CFLAGS) -c $< -o $@ -I$(INCLUDES)
