@@ -6,7 +6,7 @@
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/24 13:23:00 by julien            #+#    #+#             */
-/*   Updated: 2020/04/30 15:21:04 by julnolle         ###   ########.fr       */
+/*   Updated: 2020/07/14 17:57:31 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int		is_charset(char c, char *charset)
 	return (FALSE);
 }
 
-static char		*ft_store_word(char *src, size_t *i, char *charset)
+static char		*ft_store_word(const char *src, size_t *i, char *charset)
 {
 	char	*dest;
 	size_t	j;
@@ -55,7 +55,7 @@ static char		*ft_store_word(char *src, size_t *i, char *charset)
 	return (dest);
 }
 
-static size_t	count_words(char *str, char *charset)
+static size_t	count_words(const char *str, char *charset)
 {
 	size_t i;
 	size_t count;
@@ -91,7 +91,7 @@ static char		**ft_free_split(char ***tab, size_t stop)
 	return (NULL);
 }
 
-char			**ft_split_charset(char *str, char *charset)
+char			**ft_split_charset(char const *str, char *charset)
 {
 	char	**tab;
 	size_t	i;
