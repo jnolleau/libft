@@ -6,7 +6,7 @@
 #    By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/10 13:56:26 by julnolle          #+#    #+#              #
-#    Updated: 2020/07/13 11:43:29 by julnolle         ###   ########.fr        #
+#    Updated: 2020/07/14 12:29:51 by julnolle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,8 @@ SRCS	+= 	ft_strdup.c
 SRCS	+= 	ft_strjoin.c
 SRCS	+= 	ft_substr.c
 SRCS	+= 	ft_atof.c
+SRCS	+= 	ft_bzero.c
+SRCS	+= 	ft_calloc.c
 
 # Bonus Sources
 

@@ -6,32 +6,29 @@
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/24 19:16:50 by julien            #+#    #+#             */
-/*   Updated: 2020/04/30 15:22:47 by julnolle         ###   ########.fr       */
+/*   Updated: 2020/07/14 12:18:58 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
+#include <stdio.h>
 
-int	main(void)
+int main(int argc, char const *argv[])
 {
-	char *strs;
-	char **new;
-	char *c;
+	size_t	len;
+	char	*dst;
 
-	strs = " 	   je 				suis le test de split";
-	c = " ";
-	new = ft_split_whitespaces(strs);
-	int i = 0;
-	while (new[i] != 0)
-	{
-		printf("%s\n", new[i]);
-		free(new[i]);
-		new[i] = NULL;
-		i++;
+	if (argc == 2)
+	{	
+		len = ft_strlen(argv[1]);
+		dst = ft_calloc((len + 1), 1);
+		if (dst)
+		{
+			dst = ft_memcpy(dst, argv[1], len + 1);
+			ft_putendl(dst);
+			printf("len src:%zu len dst:%zu\n", len, ft_strlen(dst));
+			free(dst);
+		}
 	}
-	free(new);
-	new = NULL;
-	// printf("%zu\n", count_words(strs, c));
 	return (0);
 }
