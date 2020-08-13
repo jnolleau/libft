@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/06 13:47:27 by julnolle          #+#    #+#             */
-/*   Updated: 2019/12/16 16:08:03 by julnolle         ###   ########.fr       */
+/*   Created: 2019/11/06 15:35:26 by julnolle          #+#    #+#             */
+/*   Updated: 2020/08/13 19:36:32 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char *s)
+int	ft_putstr_fd(char const *s, int fd)
 {
-	write(1, s, ft_strlen(s));
+	if (!s)
+		return (FAILURE);
+	return ((int)write(fd, s, ft_strlen(s)));
 }

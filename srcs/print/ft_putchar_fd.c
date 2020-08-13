@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin_back.c                                  :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/18 18:44:39 by julnolle          #+#    #+#             */
-/*   Updated: 2020/07/14 12:34:18 by julnolle         ###   ########.fr       */
+/*   Created: 2019/11/06 15:32:12 by julnolle          #+#    #+#             */
+/*   Updated: 2020/08/13 19:27:22 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strjoin_back(char *back, char **src)
+int	ft_putchar_fd(char c, int fd)
 {
-	char *tmp;
-
-	if (back == NULL)
-		return ;
-	if (*src)
-	{
-		tmp = ft_strdup(*src);
-		free(*src);
-		*src = NULL;
-	}
-	else
-		tmp = ft_strdup("");
-	*src = ft_strjoin(tmp, back);
-	free(tmp);
-	tmp = NULL;
+	return ((int)write(fd, &c, 1));
 }

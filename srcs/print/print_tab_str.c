@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   print_tab_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/06 13:47:04 by julnolle          #+#    #+#             */
-/*   Updated: 2019/12/06 13:47:14 by julnolle         ###   ########.fr       */
+/*   Created: 2020/08/13 16:37:25 by julnolle          #+#    #+#             */
+/*   Updated: 2020/08/13 17:03:05 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char *s)
+int	print_tab_str(char **tab)
 {
-	ft_putstr(s);
-	write(1, "\n", 1);
+	int ret;
+
+	ret = 0;
+	if (!tab)
+		return (0);
+	while (*tab)
+		ret = ft_putendl(*tab++);
+	return (ret);
 }

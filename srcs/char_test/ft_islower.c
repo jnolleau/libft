@@ -1,19 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_islower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/06 15:35:26 by julnolle          #+#    #+#             */
-/*   Updated: 2019/11/15 10:51:03 by julnolle         ###   ########.fr       */
+/*   Created: 2020/08/13 19:59:31 by julnolle          #+#    #+#             */
+/*   Updated: 2020/08/13 20:05:52 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putstr_fd(char *s, int fd)
+int	ft_islower(int c)
 {
-	if (s != NULL && fd >= 0)
-		write(fd, s, ft_strlen(s));
+	return (c >= 97 && c <= 122);
 }

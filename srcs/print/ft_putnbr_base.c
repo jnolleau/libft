@@ -6,27 +6,17 @@
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 14:51:52 by julnolle          #+#    #+#             */
-/*   Updated: 2019/12/26 14:44:07 by julnolle         ###   ########.fr       */
+/*   Updated: 2020/08/13 16:29:58 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		count_base(char *base)
-{
-	int i;
-
-	i = 0;
-	while (base[i] != 0)
-		i++;
-	return (i);
-}
-
 int		check_base(char *str)
 {
-	int i;
-	int j;
-	int count;
+	size_t i;
+	size_t j;
+	size_t count;
 
 	i = 0;
 	count = 0;
@@ -43,7 +33,7 @@ int		check_base(char *str)
 			count++;
 		i++;
 	}
-	if (i == 0 || i == 1 || count != count_base(str))
+	if (i == 0 || i == 1 || count != ft_strlen(str))
 		return (0);
 	else
 		return (1);
@@ -61,8 +51,8 @@ void	convert_base(int nbr, char *base)
 		nb = -nb;
 		ft_putchar('-');
 	}
-	mod = nb % count_base(base);
-	div = nb / count_base(base);
+	mod = nb % ft_strlen(base);
+	div = nb / ft_strlen(base);
 	if (div >= 1)
 		convert_base(div, base);
 	ft_putchar(base[mod]);

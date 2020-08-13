@@ -6,12 +6,12 @@
 #    By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/10 13:56:26 by julnolle          #+#    #+#              #
-#    Updated: 2020/07/14 17:54:21 by julnolle         ###   ########.fr        #
+#    Updated: 2020/08/13 20:35:35 by julnolle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	libft.a
-MAIN	=	main.c
+MAIN	=	./srcs/main.c
 
 CC		=	clang
 
@@ -55,44 +55,18 @@ no_color	= \033[1;0m
 # ---------------- SRC --------------- #
 
 # Main Sources
-SRCS	+=	ft_atof.c
-SRCS	+=	ft_atoi.c
-SRCS	+=	ft_bzero.c
-SRCS	+=	ft_calloc.c
-SRCS	+=	ft_isalnum.c
-SRCS	+=	ft_isalpha.c
-SRCS	+=	ft_isascii.c
-SRCS	+=	ft_isdigit.c
-SRCS	+=	ft_isprint.c
-SRCS	+=	ft_itoa_base.c
-SRCS	+=	ft_itoa.c
-SRCS	+=	ft_memccpy.c
-SRCS	+=	ft_memchr.c
-SRCS	+=	ft_memcmp.c
-SRCS	+=	ft_memcpy.c
-SRCS	+=	ft_memmove.c
-SRCS	+=	ft_memset.c
 SRCS	+=	ft_nbrsize_base.c
 SRCS	+=	ft_nbrsize.c
-SRCS	+=	ft_putchar.c
-SRCS	+=	ft_putchar_fd.c
-SRCS	+=	ft_putendl.c
-SRCS	+=	ft_putendl_fd.c
-SRCS	+=	ft_putnbr_base.c
-SRCS	+=	ft_putnbr.c
-SRCS	+=	ft_putnbr_fd.c
-SRCS	+=	ft_put_revstr.c
-SRCS	+=	ft_putstr.c
-SRCS	+=	ft_putstr_fd.c
-SRCS	+=	ft_split.c
-SRCS	+=	ft_split_charset.c
-SRCS	+=	ft_split_whitespaces.c
+SRCS	+=	ft_tolower.c
+SRCS	+=	ft_toupper.c
+
+# String Sources
 SRCS	+=	ft_strchr.c
 SRCS	+=	ft_strcmp.c
 SRCS	+=	ft_strdup.c
-SRCS	+=	ft_strjoin_back.c
 SRCS	+=	ft_strjoin.c
 SRCS	+=	ft_strjoin_front.c
+SRCS	+=	ft_strjoin_back.c
 SRCS	+=	ft_strlcat.c
 SRCS	+=	ft_strlcpy.c
 SRCS	+=	ft_strlen.c
@@ -102,32 +76,82 @@ SRCS	+=	ft_strnstr.c
 SRCS	+=	ft_strrchr.c
 SRCS	+=	ft_strtrim.c
 SRCS	+=	ft_substr.c
-SRCS	+=	ft_tolower.c
-SRCS	+=	ft_toupper.c
+SRCS	+=	ft_split.c
+SRCS	+=	ft_split_charset.c
+SRCS	+=	ft_split_whitespaces.c
+SRCS	+=	free_tab_str.c
 
-# Bonus Sources
-BONUS	+=	ft_lstadd_back.c
-BONUS	+=	ft_lstadd_front.c
-BONUS	+=	ft_lstclear.c
-BONUS	+=	ft_lstdelone.c
-BONUS	+=	ft_lstiter.c
-BONUS	+=	ft_lstlast.c
-BONUS	+=	ft_lstmap.c
-BONUS	+=	ft_lstnew.c
-BONUS	+=	ft_lstsize.c
+# Memory Sources
+SRCS	+=	ft_bzero.c
+SRCS	+=	ft_calloc.c
+SRCS	+=	ft_memccpy.c
+SRCS	+=	ft_memchr.c
+SRCS	+=	ft_memcmp.c
+SRCS	+=	ft_memcpy.c
+SRCS	+=	ft_memmove.c
+SRCS	+=	ft_memset.c
 
-vpath %.c .
+# Char test Sources
+SRCS	+=	ft_isalnum.c
+SRCS	+=	ft_isalpha.c
+SRCS	+=	ft_isascii.c
+SRCS	+=	ft_isdigit.c
+SRCS	+=	ft_isprint.c
+SRCS	+=	ft_isspace.c
+SRCS	+=	ft_isblank.c
+SRCS	+=	ft_isupper.c
+SRCS	+=	ft_islower.c
+
+# Conversion Sources
+SRCS	+=	ft_atoi.c
+SRCS	+=	ft_atof.c
+SRCS	+=	ft_itoa.c
+SRCS	+=	ft_itoa_base.c
+
+# Print Sources
+SRCS	+=	ft_putchar.c
+SRCS	+=	ft_putchar_fd.c
+SRCS	+=	ft_putendl.c
+SRCS	+=	ft_putendl_fd.c
+SRCS	+=	ft_putnbr.c
+SRCS	+=	ft_putnbr_fd.c
+SRCS	+=	ft_putnbr_base.c
+SRCS	+=	ft_putstr.c
+SRCS	+=	ft_putstr_fd.c
+SRCS	+=	ft_put_revstr.c
+SRCS	+=	print_tab_str.c
+
+# List Sources
+LIST	+=	ft_lstadd_back.c
+LIST	+=	ft_lstadd_front.c
+LIST	+=	ft_lstclear.c
+LIST	+=	ft_lstdelone.c
+LIST	+=	ft_lstiter.c
+LIST	+=	ft_lstlast.c
+LIST	+=	ft_lstmap.c
+LIST	+=	ft_lstnew.c
+LIST	+=	ft_lstsize.c
+LIST	+=	tab_to_lst.c
+# LIST	+=	ft_sort_list_by_key.c
+
+vpath %.c ./srcs/
+vpath %.c ./srcs/char_test/
+vpath %.c ./srcs/conversion/
+vpath %.c ./srcs/memory/
+vpath %.c ./srcs/print/
+vpath %.c ./srcs/string/
+vpath %.c ./srcs/list/
 
 # ---------------- INC --------------- #
 
-INCLUDES =	./
-HEAD = $(INCLUDES)libft.h
+INCLUDES	=	./includes/
+HEAD		=	$(INCLUDES)libft.h
 
 # ---------------- OBJ --------------- #
 
 DIR_OBJS	= ./objs/
 OBJS		= $(patsubst %.c, $(DIR_OBJS)%.o, $(SRCS))
-OBJS_BONUS	= $(patsubst %.c, $(DIR_OBJS)%.o, $(BONUS))
+OBJS_LIST	= $(patsubst %.c, $(DIR_OBJS)%.o, $(LIST))
 
 # --------- EXEC FOR TESTINGS -------- #
 
@@ -147,17 +171,18 @@ $(OBJS): 	$(DIR_OBJS)%.o: %.c $(HEAD) Makefile | $(DIR_OBJS)
 			$(CC) $(CFLAGS) -c $< -o $@ -I$(INCLUDES)
 			@echo "$(green)--> $@ made$(no_color)"
 
-bonus : 	$(OBJS) $(OBJS_BONUS)
+list : 	$(OBJS) $(OBJS_LIST)
 			ar rcs $(NAME) $^
 			ranlib $(NAME)
-			@echo "$(green)--> $@ made$(no_color)"
+			@echo "$(yellow)==> $(NAME) with $@ linked$(no_color)"
 
 $(EXEC) :	$(NAME) $(MAIN)
-			$(CC) $(CFLAGS) $(MAIN) $(ALL_LIB) -o $@
+			$(CC) $(CFLAGS) $(MAIN) $(ALL_LIB) -I$(INCLUDES) -o $@
 			@echo "$(yellow)==> $@ made$(no_color)"
 
-$(OBJS_BONUS):	$(DIR_OBJS)%.o: %.c $(HEAD)
+$(OBJS_LIST):	$(DIR_OBJS)%.o: %.c $(HEAD)
 				$(CC) $(CFLAGS) -c $< -o $@ -I$(INCLUDES)
+				@echo "$(green)--> $@ made$(no_color)"
 
 $(DIR_OBJS):
 	mkdir -p $@
@@ -173,5 +198,5 @@ fclean:		clean
 re: 		fclean
 			$(MAKE)
 
-.PHONY:		all clean fclean re bonus exec
-.SILENT:	$(OBJS) $(NAME) clean
+.PHONY:		all clean fclean re list exec
+.SILENT:	$(OBJS) $(OBJS_LIST) $(NAME) list clean
