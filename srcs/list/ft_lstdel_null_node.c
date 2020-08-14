@@ -6,13 +6,13 @@
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/05 17:08:40 by julnolle          #+#    #+#             */
-/*   Updated: 2020/08/06 11:17:39 by julnolle         ###   ########.fr       */
+/*   Updated: 2020/08/14 16:55:32 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Not checked yet
+/*Not checked yet*/
 void	lst_del_null_nodes(t_list **list, void (*del)(t_list *))
 {
 	t_list		*tmp;

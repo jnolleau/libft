@@ -6,7 +6,7 @@
 #    By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/10 13:56:26 by julnolle          #+#    #+#              #
-#    Updated: 2020/08/13 20:35:35 by julnolle         ###   ########.fr        #
+#    Updated: 2020/08/14 12:08:46 by julnolle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ no_color	= \033[1;0m
 
 # ---------------- SRC --------------- #
 
-# Main Sources
+# Other Sources
 SRCS	+=	ft_nbrsize_base.c
 SRCS	+=	ft_nbrsize.c
 SRCS	+=	ft_tolower.c

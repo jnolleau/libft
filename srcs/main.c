@@ -6,7 +6,7 @@
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/24 19:16:50 by julien            #+#    #+#             */
-/*   Updated: 2020/08/13 16:59:28 by julnolle         ###   ########.fr       */
+/*   Updated: 2020/08/14 16:56:14 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,22 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(void)
+int	main(void)
 {
-	char	**tab;
+	char	*src;
+	char	*ret;
+	char	*src2;
+	char	*ret2;
 
-	tab = ft_split("a b c d e f g h", ' ');
-	print_tab_str(tab);
-	free_tab_str(tab);	
+	src = ft_strdup("Bonjour");
+	ret = ft_strrchr(src, 'j');
+	printf("My function\nret: %s\nsrc: %s\n\n", ret, src);
+
+	src2 = ft_strdup("Bonjour");
+	ret2 = strrchr(src2, 'j');
+	printf("Real function\nret: %s\nsrc: %s\n", ret2, src2);
+	free(src);
+	free(src2);
 	return (0);
 }
 
@@ -31,7 +40,7 @@ int main(void)
 	char	*s2;
 
 	if (argc == 3)
-	{	
+	{
 		len = ft_strlen(argv[1]);
 		s1 = ft_calloc((len + 1), 1);
 		if (s1)

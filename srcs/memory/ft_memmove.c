@@ -6,7 +6,7 @@
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 18:40:18 by julnolle          #+#    #+#             */
-/*   Updated: 2020/07/14 11:22:46 by julnolle         ###   ########.fr       */
+/*   Updated: 2020/08/14 16:53:48 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char	*dst_cpy;
+	unsigned char		*dst_cpy;
 	const unsigned char	*src_cpy;
 
 	if (dst == NULL && src == NULL)

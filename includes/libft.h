@@ -6,7 +6,7 @@
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 10:02:42 by julnolle          #+#    #+#             */
-/*   Updated: 2020/08/13 20:34:29 by julnolle         ###   ########.fr       */
+/*   Updated: 2020/08/14 16:17:41 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ t_list			*tab_to_list(char **tab);
 void			ft_putnbr_base(int nbr, char *base);
 void			ft_put_revstr(char *str);
 size_t			ft_nbrsize(long n);
-size_t			ft_nbrsize_base(long n, size_t base_len);
+size_t			ft_nbrsize_base(int n, int base_len);
 void			ft_strjoin_back(char *back, char **src);
 void			ft_strjoin_front(char *front, char **src);
 char			*ft_itoa_base(long nb, char *base);

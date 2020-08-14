@@ -6,7 +6,7 @@
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/04 16:21:14 by julnolle          #+#    #+#             */
-/*   Updated: 2020/01/06 17:51:03 by julnolle         ###   ########.fr       */
+/*   Updated: 2020/08/14 16:16:17 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** Returns the len of a nbr converted into base
 */
 
-size_t	ft_nbrsize_base(long n, size_t base_len)
+size_t	ft_nbrsize_base(int n, int base_len)
 {
 	size_t len;
 
