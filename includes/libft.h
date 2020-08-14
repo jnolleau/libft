@@ -6,7 +6,7 @@
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 10:02:42 by julnolle          #+#    #+#             */
-/*   Updated: 2020/08/14 16:17:41 by julnolle         ###   ########.fr       */
+/*   Updated: 2020/08/14 18:27:20 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 
 # define SUCCESS	0
 # define FAILURE	-1
+# define AGAIN		1
 # define TRUE		1
 # define FALSE		0
 

@@ -6,7 +6,7 @@
 #    By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/10 13:56:26 by julnolle          #+#    #+#              #
-#    Updated: 2020/08/14 12:08:46 by julnolle         ###   ########.fr        #
+#    Updated: 2020/08/14 18:38:05 by julnolle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -119,7 +119,9 @@ SRCS	+=	ft_putnbr_base.c
 SRCS	+=	ft_putstr.c
 SRCS	+=	ft_putstr_fd.c
 SRCS	+=	ft_put_revstr.c
-SRCS	+=	print_tab_str.c
+
+# List Sources
+SRCS	+=	get_next_line.c
 
 # List Sources
 LIST	+=	ft_lstadd_back.c
@@ -140,6 +142,7 @@ vpath %.c ./srcs/conversion/
 vpath %.c ./srcs/memory/
 vpath %.c ./srcs/print/
 vpath %.c ./srcs/string/
+vpath %.c ./srcs/get_next_line/
 vpath %.c ./srcs/list/
 
 # ---------------- INC --------------- #

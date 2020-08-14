@@ -6,30 +6,42 @@
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/24 19:16:50 by julien            #+#    #+#             */
-/*   Updated: 2020/08/14 16:56:14 by julnolle         ###   ########.fr       */
+/*   Updated: 2020/08/14 18:41:47 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "get_next_line.h"
 #include <stdio.h>
 #include <string.h>
+#include <fcntl.h>
 
-int	main(void)
+int		main(int argc, char **argv)
 {
-	char	*src;
-	char	*ret;
-	char	*src2;
-	char	*ret2;
+	int		fd;
+	char	*line;
+	int		i;
+	int		ret;
 
-	src = ft_strdup("Bonjour");
-	ret = ft_strrchr(src, 'j');
-	printf("My function\nret: %s\nsrc: %s\n\n", ret, src);
-
-	src2 = ft_strdup("Bonjour");
-	ret2 = strrchr(src2, 'j');
-	printf("Real function\nret: %s\nsrc: %s\n", ret2, src2);
-	free(src);
-	free(src2);
+	if (argc == 1)
+		fd = 0;
+	else if (argc == 2)
+		fd = open(argv[1], O_RDONLY);
+	else
+		return (2);
+	i = 1;
+	ret = 1;
+	while (ret > 0)
+	{
+		ret = get_next_line(fd, &line);
+		if (ret != -1)
+			ft_putendl(line);
+		i++;
+		free(line);
+	}
+	if (argc == 2)
+		close(fd);
+	// system("leaks a.out");
 	return (0);
 }
 
