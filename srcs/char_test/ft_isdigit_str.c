@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_tab_str.c                                    :+:      :+:    :+:   */
+/*   ft_isdigit_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/13 16:37:25 by julnolle          #+#    #+#             */
-/*   Updated: 2021/08/18 15:42:04 by julnolle         ###   ########.fr       */
+/*   Created: 2019/11/04 13:46:32 by julnolle          #+#    #+#             */
+/*   Updated: 2021/08/18 16:18:41 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	print_tab_str(char const **tab)
+int	ft_isdigit_str(char const *str)
 {
-	int	ret;
-
-	ret = 0;
-	if (!tab)
-		return (0);
-	while (*tab)
-		ret = ft_putendl(*tab++);
-	return (ret);
+	if (!str)
+		return (FALSE);
+	if (str[0] == '+' || str[0] == '-')
+		str++;
+	while (*str)
+	{
+		if (!ft_isdigit(*str))
+			return (FALSE);
+		str++;
+	}
+	return (TRUE);
 }

@@ -6,7 +6,7 @@
 #    By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/10 13:56:26 by julnolle          #+#    #+#              #
-#    Updated: 2020/08/15 12:22:01 by julnolle         ###   ########.fr        #
+#    Updated: 2021/08/18 16:17:14 by julnolle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,6 +101,7 @@ SRCS	+=	ft_isspace.c
 SRCS	+=	ft_isblank.c
 SRCS	+=	ft_isupper.c
 SRCS	+=	ft_islower.c
+SRCS	+=	ft_isdigit_str.c
 
 # Conversion Sources
 SRCS	+=	ft_atoi.c
@@ -119,6 +120,7 @@ SRCS	+=	ft_putnbr_base.c
 SRCS	+=	ft_putstr.c
 SRCS	+=	ft_putstr_fd.c
 SRCS	+=	ft_put_revstr.c
+SRCS	+=	print_tab_str.c
 
 # GNL Sources
 SRCS	+=	get_next_line.c

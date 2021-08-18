@@ -6,17 +6,17 @@
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 14:51:52 by julnolle          #+#    #+#             */
-/*   Updated: 2020/08/13 16:29:58 by julnolle         ###   ########.fr       */
+/*   Updated: 2021/08/18 14:54:50 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		check_base(char *str)
+int	check_base(char *str)
 {
-	size_t i;
-	size_t j;
-	size_t count;
+	size_t	i;
+	size_t	j;
+	size_t	count;
 
 	i = 0;
 	count = 0;
@@ -41,9 +41,9 @@ int		check_base(char *str)
 
 void	convert_base(int nbr, char *base)
 {
-	long int div;
-	long int mod;
-	long int nb;
+	long int	div;
+	long int	mod;
+	long int	nb;
 
 	nb = nbr;
 	if (nb < 0)

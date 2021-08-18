@@ -6,13 +6,13 @@
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 13:47:27 by julnolle          #+#    #+#             */
-/*   Updated: 2020/08/13 19:31:44 by julnolle         ###   ########.fr       */
+/*   Updated: 2021/08/18 14:51:17 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_putstr(char const *s)
+int	ft_putstr(char const *s)
 {
 	if (!s)
 		return (FAILURE);

@@ -6,7 +6,7 @@
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 10:02:42 by julnolle          #+#    #+#             */
-/*   Updated: 2020/08/14 18:27:20 by julnolle         ###   ########.fr       */
+/*   Updated: 2021/08/18 16:16:31 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ double			ft_atof(const char *str);
 char			**ft_split_charset(char const *str, char *charset);
 char			**ft_split_whitespaces(char const *str);
 void			free_tab_str(char **tab);
-int				print_tab_str(char **tab);
+int				print_tab_str(char const **tab);
+int				ft_isdigit_str(char const *str);
 
 #endif
